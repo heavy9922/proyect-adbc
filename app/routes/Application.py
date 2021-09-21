@@ -1,12 +1,13 @@
 from  flask import Flask, jsonify, request
 from app import app, db
-from app.controllers import Controller
+from app.controllers.Controller import Controller
 
 class Application:
     @app.route('/')
     def index():
-        return 'hola mundo'
+        return 'Api back'
 
     @app.route('/clients')
     def get_clients():
-        return 'welcome to bussines'
+        ct = Controller()
+        return ct.saludo()
