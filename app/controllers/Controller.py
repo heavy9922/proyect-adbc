@@ -48,3 +48,25 @@ class Controller():
             return 'el rol se registrao exitosamente'
         else:
             return 'el rol ya se encontro registrado'
+    def update_rol(self,id,rol):
+        employee = rol['employee']
+        role = Rol.query.filter_by(id = id).first()
+        
+        if role is not None:
+            role_update = Rol.query.filter_by(id = id).first()
+            role_update.employee = employee
+            db.session.add(role_update)
+            db.session.commit()
+            return 'Actualizacion correcta'
+        else:
+            return 'No se encontro rol registrado'
+
+    def delete_rol(self,id):
+        role = Rol.query.filter_by(id = id).first()
+        if role is not None:
+            rol = Rol.query.filter_by(id = id).first()
+            db.session.delete(rol)
+            db.session.commit()
+            return 'Eliminado correcta'
+        else:
+            return 'No se encontro rol registrado'

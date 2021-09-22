@@ -28,3 +28,18 @@ class Application:
         ct = Controller()
         add_rol = ct.add_rol(new_rol)
         return add_rol
+
+    @app.route('/roles/<id>', methods=['PUT'])
+    def update_roles(id):
+        new_rol = {
+            'employee': request.json['employee']
+        }
+        ct = Controller()
+        add_rol = ct.update_rol(id,new_rol)
+        return add_rol
+    
+    @app.route('/roles/<id>', methods=['DELETE'])
+    def delete_roles(id):
+        ct = Controller()
+        delete_rol = ct.delete_rol(id)
+        return delete_rol
