@@ -48,10 +48,11 @@ class Controller():
             return 'el rol se registrao exitosamente'
         else:
             return 'el rol ya se encontro registrado'
+            
     def update_rol(self,id,rol):
         employee = rol['employee']
         role = Rol.query.filter_by(id = id).first()
-        
+
         if role is not None:
             role_update = Rol.query.filter_by(id = id).first()
             role_update.employee = employee
