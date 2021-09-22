@@ -7,7 +7,8 @@ class Application:
     def index():
         return 'Api back'
 
-    @app.route('/clients')
-    def get_clients():
+    @app.route('/roles')
+    def get_roles_all():
         ct = Controller()
-        return ct.saludo()
+        roles = ct.saludo()
+        return jsonify({'list':roles})
