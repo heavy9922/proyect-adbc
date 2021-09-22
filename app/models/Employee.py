@@ -11,7 +11,7 @@ class Employee(db.Model):
     numbre_phone = db.Column(db.Integer())
     email = db.Column(db.String())
     id_branch = db.Column(db.Integer,db.ForeignKey('public.branch.id'), nullable=False)
-    id_employee = db.Column(db.Integer,db.ForeignKey('public.employee.id'), nullable=False)
+    id_employee = db.Column(db.Integer,db.ForeignKey('public.rol.id'), nullable=False)
     created_at =  db.Column(db.DateTime, nullable=False)
 
     def __init__(self,id_account,name,last_name,address,numbre_phone,email,id_branch,id_employee):
