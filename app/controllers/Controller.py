@@ -37,3 +37,14 @@ class Controller():
                     'messages':'no se encontro role',
                 })
         return roles
+    
+    def add_rol(self,rol):
+        employee = rol['employee']
+        role = Rol.query.filter_by(employee = employee).first()
+        if role is None:
+            rol = Rol(employee)
+            db.session.add(rol)
+            db.session.commit()
+            return 'el rol se registrao exitosamente'
+        else:
+            return 'el rol ya se encontro registrado'
