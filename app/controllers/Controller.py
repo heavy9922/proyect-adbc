@@ -14,7 +14,7 @@ from app.models import Employee
 from datetime import datetime
 
 class Controller():
-    def saludo(self):
+    def get_rol_all(self):
         role = Rol.query.all()
         roles = []
         for row in role:
@@ -22,4 +22,18 @@ class Controller():
                 'id':row.id,
                 'employee':row.employee,
             })
+        return roles
+    
+    def get_rol(self,id):
+        roles = []
+        role = Rol.query.filter_by(id=id).first()
+        if role is not None:
+            roles.append({
+                    'id':role.id,
+                    'employee':role.employee,
+                })
+        else:
+            roles.append({
+                    'messages':'no se encontro role',
+                })
         return roles
