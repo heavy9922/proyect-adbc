@@ -7,7 +7,7 @@ class Account(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     type_account = db.Column(db.String(), nullable=False)
     id_client = db.Column(db.Integer,db.ForeignKey('public.client.id'), nullable=False)
-    n_card = db.Column(db.Integer(), nullable=False)
+    n_card = db.Column(db.Float(), nullable=False)
     cvv = db.Column(db.Integer(), nullable=False)
     date_due = db.Column(db.Date(), nullable=False)
     created_at =  db.Column(db.DateTime, nullable=False)

@@ -8,13 +8,13 @@ class AccountRoute:
     def get_account_all():
         acc = AccountControlles()
         account = acc.get_account_all()
-        return jsonify({'list':account})
+        return jsonify(account)
     
     @app.route('/accounts/<id>')
     def get_accounts(id):
         acc = AccountControlles()
         accounts = acc.get_account(id)
-        return jsonify({'list':accounts})
+        return jsonify(accounts)
 
     @app.route('/accounts', methods=['POST'])
     def add_accounts():

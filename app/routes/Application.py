@@ -12,13 +12,13 @@ class Application:
     def get_roles_all():
         ct = Controller()
         roles = ct.get_rol_all()
-        return jsonify({'list':roles})
+        return jsonify(roles)
 
     @app.route('/roles/<id>')
     def get_role(id):
         ct = Controller()
         roles = ct.get_rol(id)
-        return jsonify({'list':roles})
+        return jsonify(roles)
 
     @app.route('/roles', methods=['POST'])
     def add_roles():

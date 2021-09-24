@@ -8,9 +8,9 @@ class Client(db.Model):
     name = db.Column(db.String(), nullable=False)
     last_name = db.Column(db.String(), nullable=False)
     address = db.Column(db.String(), nullable=False)
-    numbre_phone = db.Column(db.Integer())
+    numbre_phone = db.Column(db.Float())
     email = db.Column(db.String())
-    id_branch = db.Column(db.Integer,db.ForeignKey('public.branch.id'), nullable=False)
+    id_employee = db.Column(db.Integer,db.ForeignKey('public.employee.id'), nullable=False)
     created_at =  db.Column(db.DateTime, nullable=False)
 
     def __init__(self,id_account,name,last_name,address,numbre_phone,email,method):
