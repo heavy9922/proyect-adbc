@@ -9,4 +9,10 @@ class BranchRoute:
         bco = BranchControlles()
         branch = bco.get_branch_all()
         return jsonify({'list':branch})
+
+    @app.route('/branchs/<id>')
+    def get_branchs(id):
+        bco = BranchControlles()
+        branchs = bco.get_branch(id)
+        return jsonify({'list':branchs})
     

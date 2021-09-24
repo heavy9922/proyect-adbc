@@ -20,3 +20,19 @@ class BranchControlles:
                 'phone':row.phone
             })
         return branch
+
+    def get_branch(self,id):
+        branchs = []
+        branch = Branch.query.filter_by(id=id).first()
+        if branch is not None:
+            branchs.append({
+                'id': branch.id,
+                'name_branch' : branch.name_branch,
+                'address_branch' : branch.address_branch,
+                'phone':branch.phone
+            })
+        else:
+            branchs.append({
+                    'messages':'no se encontro sucursal',
+                })
+        return branchs
