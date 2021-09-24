@@ -8,7 +8,7 @@ class Employee(db.Model):
     name = db.Column(db.String(), nullable=False)
     last_name = db.Column(db.String(), nullable=False)
     address = db.Column(db.String(), nullable=False)
-    numbre_phone = db.Column(db.Integer())
+    numbre_phone = db.Column(db.Float())
     email = db.Column(db.String())
     id_branch = db.Column(db.Integer,db.ForeignKey('public.branch.id'), nullable=False)
     id_employee = db.Column(db.Integer,db.ForeignKey('public.rol.id'), nullable=False)

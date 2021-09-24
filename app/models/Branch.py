@@ -7,7 +7,7 @@ class Branch(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name_branch = db.Column(db.String(), nullable=False)
     address_branch = db.Column(db.String(), nullable=False)
-    phone = db.Column(db.Integer, nullable=False)
+    phone = db.Column(db.Float, nullable=False)
     created_at =  db.Column(db.DateTime, nullable=False)
 
     def __init__(self,name_branch,address_branch,phone ):

@@ -8,13 +8,13 @@ class BranchRoute:
     def get_branch_all():
         bco = BranchControlles()
         branch = bco.get_branch_all()
-        return jsonify({'list':branch})
+        return jsonify(branch)
 
     @app.route('/branchs/<id>')
     def get_branchs(id):
         bco = BranchControlles()
         branchs = bco.get_branch(id)
-        return jsonify({'list':branchs})
+        return jsonify(branchs)
     
     @app.route('/branchs', methods=['POST'])
     def add_branchs():
