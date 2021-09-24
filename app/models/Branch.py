@@ -10,6 +10,8 @@ class Branch(db.Model):
     phone = db.Column(db.Integer, nullable=False)
     created_at =  db.Column(db.DateTime, nullable=False)
 
-    def __init__(self):
-
+    def __init__(self,name_branch,address_branch,phone ):
+        self.name_branch = name_branch
+        self.address_branch= address_branch
+        self.phone = phone
         self.created_at = datetime.today()

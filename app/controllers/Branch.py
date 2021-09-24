@@ -36,3 +36,16 @@ class BranchControlles:
                     'messages':'no se encontro sucursal',
                 })
         return branchs
+
+    def add_branch(self,branch):
+        name_branch = branch['name_branch']
+        address_branch = branch['address_branch']
+        phone=branch['phone']
+        branch = Branch.query.filter_by(name_branch=name_branch).first()
+        if branch is None:
+            acco = Branch(name_branch, address_branch, phone)
+            db.session.add(acco)
+            db.session.commit()
+            return 'el branch se registrao exitosamente'
+        else:
+            return 'el branch ya se encontro registrado'

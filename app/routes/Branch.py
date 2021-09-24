@@ -16,3 +16,14 @@ class BranchRoute:
         branchs = bco.get_branch(id)
         return jsonify({'list':branchs})
     
+    @app.route('/branchs', methods=['POST'])
+    def add_branchs():
+        new_branch = {
+            'name_branch' : request.json['name_branch'],
+            'address_branch' : request.json['address_branch'],
+            'phone':request.json['phone']
+        }
+        print (new_branch)
+        acc = BranchControlles()
+        branchs = acc.add_branch(new_branch)
+        return branchs
