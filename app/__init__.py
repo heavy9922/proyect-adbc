@@ -10,4 +10,5 @@ db = SQLAlchemy(app)
 
 print(datetime.today())
 
-from app.routes import Application
+from app.routes.Application import Application
+from app.routes.Acounts import AccountRoute
