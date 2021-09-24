@@ -49,3 +49,21 @@ class BranchControlles:
             return 'el branch se registrao exitosamente'
         else:
             return 'el branch ya se encontro registrado'
+
+    def update_branch(self,id,branch):
+        name_branch = branch['name_branch']
+        address_branch = branch['address_branch']
+        phone=branch['phone']
+        branch = Branch.query.filter_by(id=id).first()
+        if branch is not None:
+            branch_update = Branch.query.filter_by(id = id).first()
+            print(branch_update, 'yolo')
+            branch_update.name_branch = name_branch
+            branch_update.address_branch = address_branch
+            branch_update.phone = phone
+            db.session.add(branch_update)
+            db.session.commit()
+            return 'Actualizacion correcta'
+        else:
+            print('hola')
+            return 'No se encontro rol registrado'

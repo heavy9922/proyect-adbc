@@ -27,3 +27,14 @@ class BranchRoute:
         acc = BranchControlles()
         branchs = acc.add_branch(new_branch)
         return branchs
+
+    @app.route('/branchs/<id>', methods=['PUT'])
+    def update_branch(id):
+        new_branch = {
+            'name_branch' : request.json['name_branch'],
+            'address_branch' : request.json['address_branch'],
+            'phone':request.json['phone']
+        }
+        acc = BranchControlles()
+        branchs = acc.update_branch(id,new_branch)
+        return branchs
