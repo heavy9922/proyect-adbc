@@ -38,3 +38,9 @@ class BranchRoute:
         acc = BranchControlles()
         branchs = acc.update_branch(id,new_branch)
         return branchs
+
+    @app.route('/branchs/<id>', methods=['DELETE'])
+    def delete_branchs(id):
+        acc = BranchControlles()
+        branchs = acc.delete_branch(id)
+        return branchs

@@ -67,3 +67,13 @@ class BranchControlles:
         else:
             print('hola')
             return 'No se encontro rol registrado'
+
+    def delete_branch(self,id):
+        branch = Branch.query.filter_by(id=id).first()
+        if branch is not None:
+            branch = Branch.query.filter_by(id=id).first()
+            db.session.delete(branch)
+            db.session.commit()
+            return 'Eliminado correcta'
+        else:
+            return 'No se encontro rol registrado'
