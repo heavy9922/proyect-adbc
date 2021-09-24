@@ -12,3 +12,4 @@ print(datetime.today())
 
 from app.routes.Application import Application
 from app.routes.Acounts import AccountRoute
+from app.routes.Branch import BranchRoute
