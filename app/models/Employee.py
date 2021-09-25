@@ -14,8 +14,7 @@ class Employee(db.Model):
     id_employee = db.Column(db.Integer,db.ForeignKey('public.rol.id'), nullable=False)
     created_at =  db.Column(db.DateTime, nullable=False)
 
-    def __init__(self,id_account,name,last_name,address,numbre_phone,email,id_branch,id_employee):
-        self.id_account = id_account
+    def __init__(self,name,last_name,address,numbre_phone,email,id_branch,id_employee):
         self.name = name
         self.last_name = last_name
         self.address = address
