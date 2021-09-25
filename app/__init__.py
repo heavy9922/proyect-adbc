@@ -10,6 +10,7 @@ db = SQLAlchemy(app)
 
 print(datetime.today())
 
-from app.routes.Application import Application
+from app.routes.Rol import Application
 from app.routes.Acounts import AccountRoute
 from app.routes.Branch import BranchRoute
+from app.routes.Employee import EmployeeRoutes
