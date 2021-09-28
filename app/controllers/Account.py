@@ -44,10 +44,10 @@ class AccountControlles:
 
     def add_account(self,account):
         cvv=  account['cvv'],
-        date_due=  acvv=  account['date_due'],
-        id_client=  acvv=  account['id_client'],
-        n_card=  acvv=  account['n_card'],
-        type_account=  acvv=  account['type_account']
+        date_due= account['date_due'],
+        id_client= account['id_client'],
+        n_card= account['n_card'],
+        type_account= account['type_account']
         account = Account.query.filter_by(n_card=n_card).first()
         if account is None:
             acco = Account(type_account, id_client, n_card,cvv,date_due)
