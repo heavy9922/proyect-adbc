@@ -13,12 +13,11 @@ class Client(db.Model):
     id_employee = db.Column(db.Integer,db.ForeignKey('public.employee.id'), nullable=False)
     created_at =  db.Column(db.DateTime, nullable=False)
 
-    def __init__(self,id_account,name,last_name,address,numbre_phone,email,method):
-        self.id_account = id_account
+    def __init__(self,name,last_name,address,numbre_phone,email,id_employee):
         self.name = name
         self.last_name = last_name
         self.address = address
         self.numbre_phone =numbre_phone
         self.email=email
-        self.method = method
+        self.id_employee=id_employee
         self.created_at = datetime.today()
